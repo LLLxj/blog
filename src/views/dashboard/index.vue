@@ -4,6 +4,7 @@
     <navPart></navPart>
     <div class="main_content">
       <mainPart></mainPart>
+      <!-- <router-view></router-view> -->
     </div>
     
   </div>
@@ -35,6 +36,5 @@
   }
   .main_content{
     width:100%;
-    height:200px;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- <navPart></navPart> -->
-    <div>aaa</div>
+    <navPart></navPart>
+    <div style="margin-top:200px;">aaa</div>
   </div>
 </template>
 
