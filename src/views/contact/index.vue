@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navPart></navPart>
+    <!-- <navPart></navPart> -->
     <div>aaa</div>
   </div>
 </template>

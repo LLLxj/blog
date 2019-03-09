@@ -4,8 +4,6 @@
     <navPart></navPart>
     <div class="main_content">
       <mainPart></mainPart>
-      
-      
     </div>
     
   </div>
@@ -17,7 +15,7 @@
   import mainPart from '../main/index'
 
   export default {
-    name: 'dashboard',
+    name: 'dashBoard',
     data () {
       return {
         

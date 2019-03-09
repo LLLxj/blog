@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <navPart></navPart>
+    <!-- <navPart></navPart> -->
      <!-- banner -->
     <div class="banner">
       <img src="@/assets/img/bac.jpg" alt="">
