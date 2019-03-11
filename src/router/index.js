@@ -20,6 +20,7 @@ const asyncRouterMap = [
     name: 'home',
     component: () => import('@/views/home/index'),
   },
+  
   {
     path: '/contact',
     name: 'contact',
