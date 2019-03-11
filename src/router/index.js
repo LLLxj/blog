@@ -8,24 +8,29 @@ export const constantRouterMap = [
     {
       component: dashBoard,
       path: '/',
-      name: 'dashboard',
-      component: () => import('@/views/dashboard/index'),
+      name: 'mains',
+      redirect: { name: 'home' },
+      // component: () => import('@/views/dashboard/index'),
+      children:[
+        {
+          path: '/home',
+          name: 'home',
+          component: () => import('@/views/home/index'),
+        },
+      ]
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('@/views/contact/index'),
     },
 ]
 
 const asyncRouterMap = [
   
-  {
-    path: '/home',
-    name: 'home',
-    component: () => import('@/views/home/index'),
-  },
+ 
+
   
-  {
-    path: '/contact',
-    name: 'contact',
-    component: () => import('@/views/contact/index'),
-  },
 ]
 
 // 临时处理路由权限 全部可以访问
