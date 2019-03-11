@@ -103,31 +103,6 @@
         <div class="clear"></div>
       </div>
     </div>
-
-    <!-- contact -->
-    <!-- <div class="main_contact">
-
-      <div class="main_contact_contain">
-        <div class="contact_title">SEND ME MESSAGE</div>
-          <div class="contact_form">
-            <div class="contact_form_input input_name">
-              <input type="text" placeholder="NAME" name="name">
-            </div>
-            <div class="contact_form_input input_tel">
-              <input type="text" placeholder="TEL" name="tel">
-            </div>
-            <div class="clear"></div>
-            <div class="contact_form_input input_mes">
-              <textarea name="message" id=""  rows="5"></textarea>  
-            </div> 
-            <div class="clear"></div>
-            <div class="contact_form_input input_btn">
-              sumbit
-            </div>
-            <div class="clear"></div>
-          </div>
-      </div> 
-    </div> -->
   </div>
   
  
@@ -244,82 +219,6 @@
       }
     }
   }
-
-  // contact
-  .main_contact{
-    width:100%;
-    overflow: hidden;
-    margin-top:0px;
-    .main_contact_bac{
-      width:100%;
-    }
-    .main_contact_contain{
-      
-    }
-    .contact_title{
-      color:#fff;
-      padding:30px 0;
-      font-size: 28px;
-      position:relative;
-      ::after{
-        position:absolute;
-        width:20%;
-        bottom:50px;
-        left:0;
-        right:0;
-        // margin:0 auto;
-        content: '';
-        background: #fff;
-        height:2px;
-      }
-    }
-    img{
-      width:100%;
-    }
-    .contact_form{
-      width:45%;
-      margin:0 auto;
-      .contact_form_input{
-        width:46%;
-        float:left;
-        margin-top:40px;
-        input{
-          width:100%;
-          border:2px solid #fff;
-          height:50px;
-          line-height:50px;
-          background: none;
-          padding-left:20px;
-          color:#BEBFBE;
-          font-size: 20px;
-        }
-      }
-      .input_tel{
-        margin-left:8%;
-      }
-      .input_mes{
-        width:100%;
-      }
-      .input_mes textarea{
-        width:98%;
-        padding:10px 20px;
-        background: none;
-        border:2px solid #fff;
-        font-size: 18px;
-        color:#BEBFBE;
-        line-height: 24px;
-        height:160px;
-      }
-      .input_btn{
-        width:10%;
-        padding:10px 20px;
-        float:left;
-        border:2px solid #fff;
-        color:#fff;
-      }
-    }
-  }
-  
   // chat
   .chat_contain{
     background: #141414;
