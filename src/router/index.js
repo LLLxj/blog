@@ -7,14 +7,14 @@ Vue.use(Router)
 export const constantRouterMap = [
     {
       component: dashBoard,
-      redirect: '/dashboard',
-      path: '',
+      path: '/',
       name: 'dashboard',
-      // component: () => import('@/views/dashboard/index'),
+      component: () => import('@/views/dashboard/index'),
     },
 ]
 
 const asyncRouterMap = [
+  
   {
     path: '/home',
     name: 'home',
