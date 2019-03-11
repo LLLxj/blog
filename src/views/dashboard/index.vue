@@ -1,14 +1,17 @@
 <template>
-  <div class="wrap">
-    
-    <navPart></navPart>
+  <div class="wrap" @scroll="handleScroll()">
 
+    <navPart v-bind:offYset="offYset"></navPart>
+    
 
     <div class="main_content">
       <mainPart></mainPart>
-      <!-- <router-view></router-view> -->
     </div>
+   
+    <backToTop></backToTop>
+
     
+
   </div>
 </template>
 
@@ -16,16 +19,26 @@
 
   import navPart from '../nav/index'
   import mainPart from '../main/index'
+  import backToTop from '@/components/backToTop/index'
 
   export default {
-    name: 'dashboard',
+    name: 'mains',
     data () {
       return {
-        
+        transitionNav: '',
+        offYset: ''
       }
     },
+    mounted () {
+      window.addEventListener('mousewheel',this.handleScroll,false)
+    },
     components: {
-      navPart, mainPart
+      navPart, mainPart, backToTop
+    },
+    methods: {
+       handleScroll (e) {
+        this.offYset = window.pageYOffset
+      },
     }
   }
 
@@ -34,12 +47,19 @@
   .wrap{
     position:relative;
     width:100%;
-    height:200px;
   }
   .main_content{
     width:100%;
-    height:500px;
-    margin-top:150px;
-    border:1px solid red;
+  }
+  .hasClass{
+    position:relative;
+    animation:myfirst .5s;
+    -moz-animation:myfirst .5s; /* Firefox */
+    -webkit-animation:myfirst .5s; /* Safari and Chrome */
+    -o-animation:myfirst .5s; /* Opera */
+  }
+  @keyframes myfirst{
+    0%   {left:0px; top:0px;}
+    100% {left:0px; top:-100px;}
   }
 </style>
