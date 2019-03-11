@@ -2,6 +2,8 @@
   <div class="wrap">
     
     <navPart></navPart>
+
+
     <div class="main_content">
       <mainPart></mainPart>
       <!-- <router-view></router-view> -->
@@ -16,7 +18,7 @@
   import mainPart from '../main/index'
 
   export default {
-    name: 'dashBoard',
+    name: 'dashboard',
     data () {
       return {
         
@@ -36,5 +38,8 @@
   }
   .main_content{
     width:100%;
+    height:500px;
+    margin-top:150px;
+    border:1px solid red;
   }
 </style>

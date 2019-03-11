@@ -11,8 +11,12 @@
         
         
         <el-col :span="6" :offset="15" class="main_menu" :routes="routes">
-          <router-link to="/"><span>home</span></router-link>
-          <router-link to="/contact"><span>contact</span></router-link>
+          <!-- <router-link to="/"> -->
+          <span @click="$router.push({ name: 'home' })" style="border:1px solid red;">home</span>
+          <!-- </router-link> -->
+          <!-- <router-link to="/contact"> -->
+          <span @click="$router.push({ name: 'contact' })">contact</span>
+          <!-- </router-link> -->
           <!-- <div v-for="item in routers" :key="item.name">
             <router-link :to="'/'+ item.name" :key="item.name">
               <span>{{item.name}}</span>

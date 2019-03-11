@@ -2,7 +2,7 @@
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
       <keep-alive>
-        <router-view></router-view>
+        <router-view :key="key"></router-view>
       </keep-alive>
     </transition>
   </section>
@@ -11,6 +11,12 @@
 <script>
 export default {
   name: 'AppMain',
+  computed: {
+    key() {
+      console.log(this.$route.fullPath)
+      return this.$route.fullPath
+    }
+  }
 }
 </script>
 

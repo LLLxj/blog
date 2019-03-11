@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navPart></navPart>
+    <!-- <navPart></navPart> -->
     <div style="margin-top:200px;">aaa</div>
   </div>
 </template>
