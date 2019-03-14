@@ -50,10 +50,6 @@ export default {
     margin:0!important;
     padding:0!important;
   }
-  .main_contain_box_list:hover .list_bac{
-    transition: all 1.5s;
-    transform: scale(1.5,1.5);
-  }
   .clear{
     clear:both
   }
