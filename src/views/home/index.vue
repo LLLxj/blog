@@ -140,6 +140,10 @@
       text-decoration: none;
       color:black;
   }
+  .main_contain_box_list:hover .list_bac{
+    transition: all 1.5s;
+    transform: scale(1.5,1.5);
+  }
    .banner{
     width:100%;
     position:relative;
