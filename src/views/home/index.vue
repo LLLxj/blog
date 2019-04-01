@@ -128,6 +128,7 @@
   body{
     margin:0!important;
     padding:0!important;
+    min-width:1200px;
   }
   .clear{
     clear:both
@@ -135,6 +136,7 @@
   .wrap{
     width:100%;
     background: #141414;
+    min-width: 1200px;
   }
   a{
       text-decoration: none;
