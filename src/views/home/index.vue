@@ -16,60 +16,15 @@
       <p>下面是博主的不定时更新</p>
       <div class="main_contain_box">
         <el-row :gutter="24">
-          <el-col :span="7" :offset="1" class="main_contain_box_list">
-            <img class="list_bac" src="@/assets/img/show1.jpg" alt="">
+          <el-col :span="7" :offset="1" class="main_contain_box_list" v-for="item in categoryList" :key="item.id">
+            <div class="list_bac_bor">
+              <img class="list_bac" :src="item.background" alt="">
+            </div>
             <div class="main_contain_box_list_cover">
-              <div class="art-data">2019,Nov 12</div>
-              <div class="art-title">第一篇文章</div>
+              <div class="art-data">{{item.create_time}}</div>
+              <div class="art-title">{{item.name}}</div>
             </div>
-          </el-col>
-
-          <el-col :span="7" :offset="1" class="main_contain_box_list">
-            <img class="list_bac" src="@/assets/img/show2.jpg" alt="">
-            <div class="main_contain_box_list_cover">
-              <div class="art-data">2019,Nov 12</div>
-              <div class="art-title">第一篇文章</div>
-            </div>
-          </el-col>
-
-          <el-col :span="7" :offset="1" class="main_contain_box_list">
-            <img class="list_bac" src="@/assets/img/show3.jpg" alt="">
-            <div class="main_contain_box_list_cover">
-              <div class="art-data">2019,Nov 12</div>
-              <div class="art-title">第一篇文章</div>
-            </div>
-          </el-col>
-          <el-col :span="7" :offset="1" class="main_contain_box_list">
-            <img class="list_bac" src="@/assets/img/show1.jpg" alt="">
-            <div class="main_contain_box_list_cover">
-              <div class="art-data">2019,Nov 12</div>
-              <div class="art-title">第一篇文章</div>
-            </div>
-          </el-col>
-
-          <el-col :span="7" :offset="1" class="main_contain_box_list">
-            <img class="list_bac" src="@/assets/img/show2.jpg" alt="">
-            <div class="main_contain_box_list_cover">
-              <div class="art-data">2019,Nov 12</div>
-              <div class="art-title">第一篇文章</div>
-            </div>
-          </el-col>
-
-          <el-col :span="7" :offset="1" class="main_contain_box_list">
-            <img class="list_bac" src="@/assets/img/show3.jpg" alt="">
-            <div class="main_contain_box_list_cover">
-              <div class="art-data">2019,Nov 12</div>
-              <div class="art-title">第一篇文章</div>
-            </div>
-          </el-col>
-
-          <!-- <el-col :span="8" :offset="8" class="main_contain_box_list">
-            <div class="load_more">
-              more...
-            </div>
-          </el-col> -->
-          
-          
+          </el-col>    
         </el-row>
       </div>
       
@@ -83,7 +38,7 @@
     <div class="chat_contain">
       <div class="chat_contain_title">if you are interted with me, @ me</div>
       <div class="chat_contain_box">
-        <div class="chat_contain_box_list">
+        <div class="chat_contain_box_list" >
           <div class="chat_contain_box_list_bor">
             <img src="@/assets/img/qq.png" alt="">
           </div>
@@ -111,15 +66,39 @@
 <script>
 
   import navPart from '../nav/index'
+  import { categoryList } from '@/api/home'
 
   export default {
     name: 'home',
     data () {
       return {
+        categoryList: []
       }
     },
     components: {
       navPart
+    },
+    created () {
+      this.getDataList()
+    },
+    methods: {
+      getDataList () {
+        categoryList().then(res => {
+          if(res.data && res.data.code === 0) {
+            let tempData = res.data.data
+            for(var i in tempData){
+              tempData[i].create_time = tempData[i].create_time.substring(0,10)
+            }
+            this.categoryList = tempData
+          } else {
+            this.$message({
+              message: res.data.status.Msg,
+              type: 'error',
+              duration: 3 * 1000
+            })
+          }
+        })
+      },
     }
   }
 
@@ -178,19 +157,25 @@
       width:80%;
       margin:0 auto;
       .main_contain_box_list{
+        height:260px;
         overflow: hidden;
         position:relative;
         margin-top:20px;
         margin-bottom:20px;
-        img{
+        .list_bac_bor{
           width:100%;
+          margin:0 auto;
+          img{
+            width:100%;
+          }
         }
+        
       }
       .main_contain_box_list_cover{
         width:90%;
         position:absolute;
         bottom:20px;
-        left:0;
+        left:20px;
         right:0;
         margin:0 auto;
         text-align: left;
@@ -259,8 +244,5 @@
       }
     }
   }
-  
-  
- 
 </style>
 
