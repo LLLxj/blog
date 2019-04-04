@@ -16,13 +16,13 @@
       <p>下面是博主的不定时更新</p>
       <div class="main_contain_box">
         <el-row :gutter="24">
-          <el-col :span="7" :offset="1" class="main_contain_box_list" v-for="item in categoryList" :key="item.id">
+          <el-col :span="7" :offset="1" class="main_contain_box_list" v-for="item in categoryList" :key="item.id" @click.native="getArticleDetail(item.id)">
             <div class="list_bac_bor">
               <img class="list_bac" :src="item.background" alt="">
             </div>
             <div class="main_contain_box_list_cover">
               <div class="art-data">{{item.create_time}}</div>
-              <div class="art-title">{{item.name}}</div>
+              <div class="art-title">{{item.title}}</div>
             </div>
           </el-col>    
         </el-row>
@@ -66,7 +66,7 @@
 <script>
 
   import navPart from '../nav/index'
-  import { categoryList } from '@/api/home'
+  import { categoryList, articleList } from '@/api/home'
 
   export default {
     name: 'home',
@@ -83,7 +83,7 @@
     },
     methods: {
       getDataList () {
-        categoryList().then(res => {
+        articleList().then(res => {
           if(res.data && res.data.code === 0) {
             let tempData = res.data.data
             for(var i in tempData){
@@ -99,6 +99,16 @@
           }
         })
       },
+      // 查看详情
+      getArticleDetail (data) {
+        console.log(data)
+        this.$router.push({
+          name: 'article',
+          query: {
+            id: data
+          }
+        })
+      }
     }
   }
 
