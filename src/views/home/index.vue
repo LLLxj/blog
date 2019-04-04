@@ -92,7 +92,7 @@
             this.categoryList = tempData
           } else {
             this.$message({
-              message: res.data.status.Msg,
+              message: res.data.msg,
               type: 'error',
               duration: 3 * 1000
             })
