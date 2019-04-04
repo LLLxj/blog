@@ -17,6 +17,11 @@ export const constantRouterMap = [
           name: 'home',
           component: () => import('@/views/home/index'),
         },
+        {
+          path: '/article',
+          name: 'article',
+          component: () => import('@/views/article/index'),
+        },
       ]
     },
     {
@@ -24,6 +29,7 @@ export const constantRouterMap = [
       name: 'contact',
       component: () => import('@/views/contact/index'),
     },
+
 ]
 
 const asyncRouterMap = [
