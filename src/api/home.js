@@ -7,3 +7,19 @@ export function categoryList(query) {
     params: query
   })
 }
+
+export function articleList(query) {
+  return request({
+    url: '/article/list',
+    method: 'get',
+    params: query
+  })
+}
+
+// 获取文章详情
+export function articleInfo(data) {
+  return request({
+    url: '/article/info/' + data,
+    method: 'get',
+  })
+}
