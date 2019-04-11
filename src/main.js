@@ -13,6 +13,18 @@ Vue.config.productionTip = false
 Vue.prototype.$http = httpRequest
 Vue.use(ElementUI)
 
+router.afterEach( ( to, from, next ) => {
+  setTimeout(()=>{
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cd367ade4d2e99941c5abcf85f3bfcdd";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  },0);
+ } );
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
