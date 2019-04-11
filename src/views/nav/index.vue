@@ -25,7 +25,6 @@ export default {
   },
   data() {
     return {
-     
       transitionName: 'fade',
       visible: true,
     }
