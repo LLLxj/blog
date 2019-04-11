@@ -74,7 +74,10 @@
       return {
         categoryList: [],
         currentPage: 1,
-        pageSize: 6
+        pageSize: 6,
+        searchData: {
+
+        }
       }
     },
     components: {
@@ -85,7 +88,9 @@
     },
     methods: {
       getDataList () {
-        articleList(this.currentPage,this.pageSize).then(res => {
+        this.searchData.currentPage = this.currentPage
+        this.searchData.pageSize = this.pageSize
+        articleList(this.searchData).then(res => {
           if(res.data && res.data.code === 0) {
             let tempData = res.data.data
             for(var i in tempData){
