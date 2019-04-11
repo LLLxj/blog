@@ -1,19 +1,28 @@
 <template>
   <div class="wrap">
     <div class="article_bor">
+
       <div class="article_bac">
         <img :src="this.dataForm.background" alt="">
       </div>
+
       <div class="article_content">
         <div v-html="this.dataForm.content" class="article_content_detail">
-        </div>
+        </div> 
       </div>
+
+      <div class="article_recently">
+        <recentlyArticle></recentlyArticle>
+      </div>
+
+      
     </div>
   </div>
 </template>
 
 <script>
 import { articleInfo } from '@/api/home'
+import recentlyArticle from '@/components/recentlyArticle'
 
 export default {
   data() {
@@ -27,6 +36,9 @@ export default {
         resource: '',
       }
     }
+  },
+  components: {
+    recentlyArticle
   },
   created() {
     const rowData = this.$route.query.id || 0
@@ -82,6 +94,11 @@ export default {
             width:100%;
           }
         }
+      }
+      .article_recently{
+        background: #ffffff;
+        margin-top:50px;
+        padding:30px 0;
       }
     }
   }
