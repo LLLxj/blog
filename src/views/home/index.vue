@@ -72,7 +72,9 @@
     name: 'home',
     data () {
       return {
-        categoryList: []
+        categoryList: [],
+        currentPage: 1,
+        pageSize: 6
       }
     },
     components: {
@@ -83,7 +85,7 @@
     },
     methods: {
       getDataList () {
-        articleList().then(res => {
+        articleList(this.currentPage,this.pageSize).then(res => {
           if(res.data && res.data.code === 0) {
             let tempData = res.data.data
             for(var i in tempData){
@@ -101,7 +103,6 @@
       },
       // 查看详情
       getArticleDetail (data) {
-        console.log(data)
         this.$router.push({
           name: 'article',
           query: {
@@ -135,7 +136,7 @@
     transition: all 1.5s;
     transform: scale(1.5,1.5);
   }
-   .banner{
+  .banner{
     width:100%;
     position:relative;
     img{
