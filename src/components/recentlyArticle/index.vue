@@ -1,8 +1,7 @@
 <template>
  <div>
     <p class="title">最近文章</p>
-   <el-row :gutter="24">
-    <el-col :span="7" :offset="1" class="main_contain_box_list" v-for="item in articleLists" :key="item.id" @click.native="getArticleDetail(item.id)">
+    <div class="main_contain_box_list" v-for="item in articleLists" :key="item.id" @click="getArticleDetail(item.id)">
       <div class="list_bac_bor">
         <img class="list_bac" :src="item.background" alt="">
       </div>
@@ -10,8 +9,8 @@
         <!-- <div class="art-data">{{item.create_time}}</div> -->
         <div class="art-title">{{item.title}}</div>
       </div>
-    </el-col>    
-  </el-row>
+    </div>  
+    <div class="clear"></div>  
  </div>
 </template>
 
@@ -66,9 +65,16 @@ export default {
   .title{
     font-size: 28px;
     color:#000;
+    font-weight: bold;
+  }
+  .clear{
+    clear:both
   }
   .main_contain_box_list{
     height:150px;
+    width:32%;
+    margin-left:1%;
+    float:left;
     overflow: hidden;
     position:relative;
     margin-top:20px;
