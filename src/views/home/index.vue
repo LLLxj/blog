@@ -171,9 +171,10 @@
     }
     .main_contain_box{
       width:80%;
+      min-width: 1200px;
       margin:0 auto;
       .main_contain_box_list{
-        height:260px;
+        height:240px;
         overflow: hidden;
         position:relative;
         margin-top:20px;

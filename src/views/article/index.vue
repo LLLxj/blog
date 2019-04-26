@@ -11,11 +11,20 @@
         </div> 
       </div>
 
+      <!-- 近期文章 -->
       <div class="article_recently">
-        <recentlyArticle></recentlyArticle>
+        <div class="article_recently_bor">
+          <recentlyArticle></recentlyArticle>
+        </div>
       </div>
 
-      
+      <!-- 评论 -->
+      <div class="article_comment">
+        <div class="article_comment_bor">
+          <articleComment ></articleComment>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -23,6 +32,7 @@
 <script>
 import { articleInfo } from '@/api/home'
 import recentlyArticle from '@/components/recentlyArticle'
+import articleComment from '@/components/comment'
 
 export default {
   data() {
@@ -38,7 +48,7 @@ export default {
     }
   },
   components: {
-    recentlyArticle
+    recentlyArticle, articleComment
   },
   created() {
     const rowData = this.$route.query.id || 0
@@ -68,9 +78,10 @@ export default {
   .wrap{
     width:100%;
     background: #141414;
-    min-width: 1200px;
+    min-width: 960px;
     .article_bor{
       width:50%;
+      min-width: 960px;
       margin:0 auto;
       padding-top:200px;
       .article_bac{
@@ -84,7 +95,7 @@ export default {
         background: #ffffff;
         overflow: hidden;
         .article_content_detail{
-          width:92%!important;
+          width:96%!important;
           margin:0 auto;
           padding:50px 0;
           display:block;
@@ -96,9 +107,24 @@ export default {
         }
       }
       .article_recently{
+        width:100%;
         background: #ffffff;
         margin-top:50px;
         padding:30px 0;
+        .article_recently_bor{
+          width:96%!important;
+          margin:0 auto;
+        }
+      }
+      .article_comment{
+        width:100%;
+        background: #ffffff;
+        margin-top:50px;
+        padding:30px 0;
+        .article_comment_bor{
+          width:96%!important;
+          margin:0 auto;
+        }
       }
     }
   }
