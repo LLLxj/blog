@@ -23,3 +23,44 @@ export function articleInfo(data) {
     method: 'get',
   })
 }
+
+// 登录
+export function login(data) {
+  return request({
+    url: '/login',
+    method: 'post',
+    data
+  })
+}
+
+export function loginInfo(username) {
+  return request({
+    url: '/getInfo',
+    method: 'get',
+    params: { username }
+  })
+}
+
+export function register(data) {
+  return request({
+    url: '/register',
+    method: 'post',
+    data
+  })
+}
+
+export function checkName(data) {
+  return request({
+    url: '/register/checkName/' + data,
+    method: 'get',
+  })
+}
+
+export function checkTel(data) {
+  return request({
+    url: '/register/checkTel/' + data,
+    method: 'get',
+  })
+}
+
+// /register/checkName
